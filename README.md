@@ -11,7 +11,11 @@ git clone https://github.com/623337308/Centos-Install-Node.git
 
 ## operation
 
+cd Centos-Install-Node
+
 ./install-node.sh
+
+安装node需注意系统安装位数32/64
 
 ```
 
