@@ -58,7 +58,9 @@ tar -zxvf "node-v"${v}"-linux-x"${type}".tar.gz"
 
 cd "node-v"${v}"-linux-x"${type}
 
-let cur_dir=$(cd "$(dirname "$0")"; pwd);
+cur_dir=$(cd "$(dirname "$0")"; pwd);
+
+echo $cur_dir
 
 ln -s $cur_dir"/node" "/usr/local/bin/node";
 
