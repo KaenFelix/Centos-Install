@@ -11,7 +11,7 @@ wget -N --no-check-certificate https://github.com/623337308/Centos-Install-Node/
 
 ## 运行
 
-./install-node.sh
+bash install-node.sh
 
 ```
 
