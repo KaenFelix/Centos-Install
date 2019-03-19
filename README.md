@@ -5,15 +5,11 @@ Centos一键安装Node环境
 
 ``` bash
 
-# install 
+# 下载 
 
-git clone https://github.com/623337308/Centos-Install-Node.git
+wget -N --no-check-certificate https://github.com/623337308/Centos-Install-Node/raw/master/install-node.sh
 
-## operation
-
-cd Centos-Install-Node
-
-chmod 777 install-node.sh
+## 运行
 
 ./install-node.sh
 

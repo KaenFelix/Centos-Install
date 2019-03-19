@@ -2,15 +2,16 @@
 
 GREEN_COLOR='\033[32m' #绿
 YELOW_COLOR='\033[33m' #黄
-BLUE_COLOR='\033[35m' #蓝
+BLUE_COLOR='\033[36m' #蓝
 RES='\033[0m'
 underline='\033[4m'
 oldpath=$(cd "$(dirname "$0")"; pwd);
 type=$(getconf LONG_BIT);
 
 echo -e "\n"
-echo -n "请输入安装位置(不填为当前位置)"
+echo -ne "请输入安装位置${BLUE_COLOR}[默认为当前位置]${RES}："
 read installPath
+
 if [ ! -d $installPath ]; then
   echo -e "\n"
   echo -e "${YELOW_COLOR}路径错误,请重新执行shell${RES}"
@@ -31,11 +32,14 @@ fi
 echo -e "\n"
 echo -e "系统版本：${GREEN_COLOR}x${type}${RES}"
 echo -e "\n"
-# echo -n "请输入需要安装的Node版本号："
-# read v
+echo -n "请输入需要安装的Node版本号："
+read v
+
 echo -e "\n"
 
 cd $installPath
+
+echo -e "\n"
 
 # 拆分
 
@@ -45,6 +49,8 @@ temp=($v)
 IFS="$OLD_IFS"
 
 echo "https://nodejs.org/dist/latest-v"${temp[0]}".x/node-v"${v}"-linux-x"${type}".tar.gz"
+
+echo -e "\n"
 
 wget "https://nodejs.org/dist/latest-v"${temp[0]}".x/node-v"${v}"-linux-x"${type}".tar.gz"
 
