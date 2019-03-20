@@ -12,16 +12,14 @@ yum install mysql-community-server
 
 service mysqld restart
 
-echo '设置root密码'
-read password
+echo 设置密码：set password for 'root'@'localhost' =password('密码')
+
+echo 远程连接：grant all privileges on *.* to 用户名@'%'identified by '密码'
 
 mysql -u root
 
-set password for 'root'@'localhost' =password($password);
 
-grant all privileges on *.* to root@'%'identified by 'password';
+# vim /etc/my.cnf
 
-vim /etc/my.cnf
-
-[mysql]
-default-character-set =utf8
+# [mysql]
+# default-character-set =utf8

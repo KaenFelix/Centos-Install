@@ -79,3 +79,5 @@ cd ${oldpath}
 echo -e "\n"
 
 echo -e "Node"${GREEN_COLOR}${v}${RES}"安装完成"
+
+echo -e "\n"
