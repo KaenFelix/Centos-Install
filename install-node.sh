@@ -9,7 +9,7 @@ oldpath=$(cd "$(dirname "$0")"; pwd);
 type=$(getconf LONG_BIT);
 
 echo -e "\n"
-echo -ne "请输入安装位置${BLUE_COLOR}[默认为当前位置]${RES}："
+echo -ne "请输入安装位置${BLUE_COLOR}[默认为当前用户文件夹]${RES}："
 read installPath
 
 if [ ! -d $installPath ]; then
@@ -54,13 +54,17 @@ echo -e "\n"
 
 wget "https://nodejs.org/dist/latest-v"${temp[0]}".x/node-v"${v}"-linux-x"${type}".tar.gz"
 
-tar -zxvf "node-v"${v}"-linux-x"${type}".tar.gz"
+tar -zxf "node-v"${v}"-linux-x"${type}".tar.gz"
 
-cd "node-v"${v}"-linux-x"${type}
+rm -rf "node-v"${v}"-linux-x"${type}".tar.gz"
+
+cd "node-v"${v}"-linux-x"${type}'/bin'
 
 cur_dir=$(cd "$(dirname "$0")"; pwd);
 
-echo $cur_dir
+rm -rf /usr/local/bin/npm
+rm -rf /usr/local/bin/node
+rm -rf /usr/local/bin/yarn
 
 ln -s $cur_dir"/node" "/usr/local/bin/node";
 
@@ -72,6 +76,6 @@ ln -s $cur_dir"/yarn" "/usr/local/bin/yarn";
 
 cd ${oldpath}
 
-rm -rf "node-v"${v}"-linux-x"${type}".tar.gz"
+echo -e "\n"
 
-echo "Node"${v}"安装完成"
+echo -e "Node"${GREEN_COLOR}${v}${RES}"安装完成"

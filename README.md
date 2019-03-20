@@ -1,4 +1,4 @@
-# Centos-Install-Node
+# Centos-Install
 Centos一键安装Node环境
 
 ## Build Setup
