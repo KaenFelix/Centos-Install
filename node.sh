@@ -45,14 +45,13 @@ echo -e "\n"
 
 OLD_IFS="$IFS"
 IFS="."
-temp=($v)
 IFS="$OLD_IFS"
 
-echo "https://nodejs.org/download/release/v"${temp[0]}"/node-v"${v}"-linux-x"${type}".tar.gz"
+echo "https://nodejs.org/download/release/v"${v}"/node-v"${v}"-linux-x"${type}".tar.gz"
 
 echo -e "\n"
 
-wget "https://nodejs.org/download/release/v"${temp[0]}"/node-v"${v}"-linux-x"${type}".tar.gz"
+wget "https://nodejs.org/download/release/v"${v}"/node-v"${v}"-linux-x"${type}".tar.gz"
 
 tar -zxf "node-v"${v}"-linux-x"${type}".tar.gz"
 
