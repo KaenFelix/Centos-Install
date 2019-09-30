@@ -71,7 +71,11 @@ ln -s $cur_dir"/npm" "/usr/local/bin/npm";
 
 npm i -g yarn
 
+npm i -g forever
+
 ln -s $cur_dir"/yarn" "/usr/local/bin/yarn";
+
+ln -s $cur_dir"/forever" "/usr/local/bin/forever";
 
 cd ${oldpath}
 
