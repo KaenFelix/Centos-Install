@@ -1,0 +1,1 @@
+docker run -d --name redis -p 9736:6379 redis --requirepass "pwd"
