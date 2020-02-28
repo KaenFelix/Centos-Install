@@ -22,9 +22,9 @@ echo -e "\n"
 echo -e "Node官网下载地址：${underline}${BLUE_COLOR}https://nodejs.org/zh-cn/download/releases/${RES}";
 echo -e "\n"
 if (($type==64)); then
-    echo -e "Node稳定版：${GREEN_COLOR}10.15.3${RES}";
+    echo -e "Node稳定版：${GREEN_COLOR}12.16.1${RES}";
     echo -e "\n"
-    echo -e "Node最新版：${GREEN_COLOR}11.12.0${RES}";
+    echo -e "Node最新版：${GREEN_COLOR}13.9.0${RES}";
 else
     $type = 86;
     echo -e "32位系统建议安装Node.js 8.x以下版本如${GREEN_COLOR}8.15.1${RES}";
@@ -71,11 +71,11 @@ ln -s $cur_dir"/npm" "/usr/local/bin/npm";
 
 npm i -g yarn
 
-npm i -g forever
+npm i -g pm2
 
 ln -s $cur_dir"/yarn" "/usr/local/bin/yarn";
 
-ln -s $cur_dir"/forever" "/usr/local/bin/forever";
+ln -s $cur_dir"/pm2" "/usr/local/bin/pm2";
 
 cd ${oldpath}
 
